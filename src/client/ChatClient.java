@@ -182,8 +182,11 @@ public class ChatClient {
         }
         
         // Default to GUI mode
+        final String finalHost = host;
+        final int finalPort = port;
+        final String finalUsername = username;
         javax.swing.SwingUtilities.invokeLater(() -> {
-            new ChatClientGUI(host, port, username);
+            new ChatClientGUI(finalHost, finalPort, finalUsername);
         });
     }
 }
